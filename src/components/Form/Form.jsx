@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { PropTypes } from 'prop-types';
 import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 import { add } from '../../redux/contactsSlice';

@@ -26,9 +26,7 @@ export const ContactElem = ({ name, number }) => {
   );
 };
 
-// ContactElem.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-//   number: PropTypes.string.isRequired,
-//   onRemove: PropTypes.func.isRequired,
-// };
+ContactElem.propTypes = {
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+};

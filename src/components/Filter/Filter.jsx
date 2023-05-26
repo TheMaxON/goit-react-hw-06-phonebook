@@ -1,4 +1,3 @@
-import { PropTypes } from 'prop-types';
 import { useState, useEffect } from 'react';
 import { Label } from '../Form/Form.styled.jsx';
 import { InputStyle } from '../Form/Form.styled.jsx';
@@ -31,8 +30,3 @@ export const Filter = () => {
     </Label>
   );
 };
-
-// Filter.propTypes = {
-//   currentFilter: PropTypes.string.isRequired,
-//   updateFilter: PropTypes.func.isRequired,
-// };
