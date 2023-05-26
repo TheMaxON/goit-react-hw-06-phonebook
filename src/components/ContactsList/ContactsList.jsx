@@ -10,7 +10,6 @@ export const ContactsList = () => {
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter)
   );
-  console.log(filteredContacts.length);
 
   return (
     <>
