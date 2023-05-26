@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { nanoid } from 'nanoid';
+import { useDispatch } from 'react-redux';
+import { add } from './redux/contactsSlice';
 import { InputContainer, Label, InputStyle, Button } from './Form.styled.jsx';
 
 const Input = props => {
   const [contactName, setName] = useState('');
   const [contactNumber, setNumber] = useState('');
+  const dispatch = useDispatch();
 
   const onChange = event => {
     const { name, value } = event.target;
