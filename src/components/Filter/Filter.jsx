@@ -1,14 +1,21 @@
 import { PropTypes } from 'prop-types';
+import { useState, useEffect } from 'react';
 import { Label } from '../Form/Form.styled.jsx';
 import { InputStyle } from '../Form/Form.styled.jsx';
+import { useDispatch } from 'react-redux';
+import { changeFilter } from '../../redux/contactsSlice';
 
-export const Filter = props => {
-  const { currentFilter } = props;
-  const { updateFilter } = props;
+export const Filter = () => {
+  const dispatch = useDispatch();
+  const [query, setQuery] = useState('');
 
-  const changeFilter = e => {
-    const query = e.target.value;
-    updateFilter(query);
+  useEffect(() => {
+    const normalizedQuery = query.toLowerCase().trim();
+    dispatch(changeFilter(normalizedQuery));
+  }, [query, dispatch]);
+
+  const onChange = e => {
+    setQuery(e.target.value);
   };
 
   return (
@@ -18,14 +25,14 @@ export const Filter = props => {
         type="text"
         name="search"
         placeholder="Search"
-        onChange={changeFilter}
-        value={currentFilter}
+        onChange={e => onChange(e)}
+        value={query}
       />
     </Label>
   );
 };
 
-Filter.propTypes = {
-  currentFilter: PropTypes.string.isRequired,
-  updateFilter: PropTypes.func.isRequired,
-};
+// Filter.propTypes = {
+//   currentFilter: PropTypes.string.isRequired,
+//   updateFilter: PropTypes.func.isRequired,
+// };

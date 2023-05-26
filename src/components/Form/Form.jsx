@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
-import { add } from './redux/contactsSlice';
+import { add } from '../../redux/contactsSlice';
 import { InputContainer, Label, InputStyle, Button } from './Form.styled.jsx';
 
-const Input = props => {
+const Input = () => {
   const [contactName, setName] = useState('');
   const [contactNumber, setNumber] = useState('');
   const dispatch = useDispatch();
@@ -29,16 +29,13 @@ const Input = props => {
   const onSubmit = event => {
     event.preventDefault();
 
-    const { name, number } = event.target.elements;
-    setName(name.value);
-    setNumber(number.value);
-
-    const newContact = {
-      id: nanoid(),
-      name: contactName,
-      number: contactNumber,
-    };
-    props.onSubmit(newContact);
+    dispatch(
+      add({
+        id: nanoid(),
+        name: contactName,
+        number: contactNumber,
+      })
+    );
     reset();
   };
 
@@ -81,7 +78,3 @@ const Input = props => {
 };
 
 export default Input;
-
-Input.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
