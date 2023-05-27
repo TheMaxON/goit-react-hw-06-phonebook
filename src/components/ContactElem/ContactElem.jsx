@@ -8,11 +8,11 @@ import {
 import { useDispatch } from 'react-redux';
 import { remove } from '../../redux/contactsSlice';
 
-export const ContactElem = ({ name, number }) => {
+export const ContactElem = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   const onRemove = () => {
-    dispatch(remove(name));
+    dispatch(remove(id));
   };
 
   return (
@@ -27,6 +27,7 @@ export const ContactElem = ({ name, number }) => {
 };
 
 ContactElem.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
 };

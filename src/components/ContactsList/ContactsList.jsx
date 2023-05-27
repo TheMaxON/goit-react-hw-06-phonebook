@@ -19,6 +19,7 @@ export const ContactsList = () => {
             return (
               <ContactElem
                 key={contact.id}
+                id={contact.id}
                 name={contact.name}
                 number={contact.number}
               />
