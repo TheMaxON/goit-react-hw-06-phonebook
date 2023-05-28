@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { add } from '../../redux/contactsSlice';
+import { add } from 'redux/contactsSlice';
 import { InputContainer, Label, InputStyle, Button } from './Form.styled.jsx';
-import { getContacts } from '../../redux/contactsSlice';
+import { getContacts } from 'redux/contactsSlice';
 
 const Input = () => {
   const [contactName, setName] = useState('');

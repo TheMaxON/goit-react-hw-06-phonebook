@@ -1,7 +1,7 @@
 import { Label } from '../Form/Form.styled.jsx';
 import { InputStyle } from '../Form/Form.styled.jsx';
 import { useDispatch } from 'react-redux';
-import { changeFilter } from '../../redux/contactsSlice';
+import { changeFilter } from 'redux/contactsSlice';
 
 export const Filter = () => {
   const dispatch = useDispatch();

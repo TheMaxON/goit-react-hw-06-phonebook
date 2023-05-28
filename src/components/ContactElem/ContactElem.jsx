@@ -6,7 +6,7 @@ import {
   DeleteBtn,
 } from './ContactElem.styled.jsx';
 import { useDispatch } from 'react-redux';
-import { remove } from '../../redux/contactsSlice';
+import { remove } from 'redux/contactsSlice';
 
 export const ContactElem = ({ id, name, number }) => {
   const dispatch = useDispatch();
